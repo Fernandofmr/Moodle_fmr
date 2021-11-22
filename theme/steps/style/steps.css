@@ -1,0 +1,100 @@
+.fondo-login{
+    background-image: url(/moodle_fmr/theme/steps/pix/login/login_persona_g.jpg) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#region-main .row .col-sm-8{
+   margin-left: 50%;
+}
+
+.justify-content-center .col-sm-8 .card .card-block .card-header{
+    font-family: fantasy;
+    font-weight: bold;
+}
+
+.justify-content-center .col-sm-8 .card{
+    position: absolute !important;
+    border: 3px solid orange;
+    border-radius: 20px;
+    width: 75%;
+    margin-top: -1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+    box-shadow: rgba(5, 5, 5, 5.56) 0px 22px 70px 40px;
+}
+
+.card-body .justify-content-md-center{
+    display: block !important;
+}
+
+.card-body .justify-content-md-center .col-md-5{
+    max-width: 100%;
+}
+
+#login #loginbtn{
+    width: 25%;
+    border-radius: 50px;
+    margin-left: 35%;
+    height: 70px;
+}
+
+#region-main{
+    overflow: revert !important;
+}
+
+.fondo-login #page #page-content #region-main-box #region-main{
+    box-shadow: none !important;
+}
+
+
+
+                        /********* GENERAL **********/
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.navbar{
+    background-color: #86C8FD !important;
+}
+
+#nav-drawer{
+    background-color: #D4EEFF!important;
+}
+
+#page-header .card{
+    border: none !important;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#region-main-box #region-main{
+    border: none !important;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-top: -1rem;
+}
+
+#block-region-side-pre section.card{
+    border: none !important;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.d-inline-block button.nav-link{
+    border: 3px solid rgba(0, 0, 0, .125) !important;
+}
+
+#nav-drawer .list-group{
+    /*border: 3px solid rgba(0, 0, 0, .125) !important;*/
+    border: none !important;
+    width: 121%;
+    margin-left: -2rem;
+}
+
+#region-main .d-print-none aside .card-body{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border: none !important;
+}
+
+.img-menu-lateral{
+    width: 15rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
