@@ -82,30 +82,6 @@ class auth_plugin_extraquestion extends auth_plugin_base {
                 </div>
                 <?php 
                 } ?>
-                <!--<div class="form-check">
-                    <input id="input-answer-1" class="form-check-input" type="radio" name="optionanswer" id="option2" value="">
-                    <label id="label-answer-1" class="form-check-label" for="option2">
-                        
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input id="input-answer-2" class="form-check-input" type="radio" name="optionanswer" id="option3" value="">
-                    <label id="label-answer-2" class="form-check-label" for="option3">
-                        
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input id="input-answer-3" class="form-check-input" type="radio" name="optionanswer" id="option4" value="">
-                    <label id="label-answer-3" class="form-check-label" for="option4">
-                        
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input id="input-answer-4" class="form-check-input" type="radio" name="optionanswer" id="option5" value="">
-                    <label id="label-answer-4" class="form-check-label" for="option5">
-                        
-                    </label>
-                </div>-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
