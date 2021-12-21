@@ -55,6 +55,7 @@ class auth_plugin_extraquestion extends auth_plugin_base {
      */
     function loginpage_hook(){
         ?>
+        <div id="error-message" class="text-center"></div>
         <button id="btn-hacer-pregunta" class="btn btn-primary d-none" onclick="hacer_pregunta()">Pregunta login</button>
         <!-- Button trigger modal -->
         <button id="btn-modal-question" type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#modalQuestion"></button>
@@ -65,18 +66,23 @@ class auth_plugin_extraquestion extends auth_plugin_base {
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalQuestionLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button id="cierra-modal" type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+                <?php 
+                for ($i=1; $i<=5; $i++){
+                ?>
                 <div class="form-check">
-                    <input id="input-answer-0" class="form-check-input" type="radio" name="optionanswer" id="option1" value="">
-                    <label id="label-answer-0" class="form-check-label" for="option1">
+                    <input id="input-answer-<?php echo $i-1 ?>" class="form-check-input" type="radio" name="optionanswer" id="option<?php echo $i ?>" value="">
+                    <label id="label-answer-<?php echo $i-1 ?>" class="form-check-label" for="option<?php echo $i ?>">
                         
                     </label>
                 </div>
-                <div class="form-check">
+                <?php 
+                } ?>
+                <!--<div class="form-check">
                     <input id="input-answer-1" class="form-check-input" type="radio" name="optionanswer" id="option2" value="">
                     <label id="label-answer-1" class="form-check-label" for="option2">
                         
@@ -99,7 +105,7 @@ class auth_plugin_extraquestion extends auth_plugin_base {
                     <label id="label-answer-4" class="form-check-label" for="option5">
                         
                     </label>
-                </div>
+                </div>-->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -113,6 +119,7 @@ class auth_plugin_extraquestion extends auth_plugin_base {
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             $(window).on("load", function() {
+                $('#error-message').insertBefore('#username');
                 $('#btn-hacer-pregunta').insertAfter('#loginbtn');
                 $('#btn-modal-question').insertAfter('#btn-hacer-pregunta');
                 const BTN_HACER_PREGUNTA = document.getElementById('btn-hacer-pregunta');
@@ -197,6 +204,7 @@ class auth_plugin_extraquestion extends auth_plugin_base {
 
             function checkAnswer(options, op_correcta){                
                 var loginform = document.getElementById('login');
+                    var mensaje_error = document.getElementById('error-message');
                 for(var i=0; i<options.length; i++){
                     if(document.querySelector('#input-answer-' + i + ':checked') !== null ){
                         var respuesta_usuario = i + 1;
@@ -204,10 +212,16 @@ class auth_plugin_extraquestion extends auth_plugin_base {
                     }
                 }
                 if(respuesta_usuario == op_correcta){
-                    count_push_btn ++;
-                    loginform.submit();
+                    //count_push_btn ++;
+                    mensaje_error.style.color = 'green';
+                    mensaje_error.innerHTML = 'Respuesta correcta';
+                    $('#cierra-modal').click();
+                    setTimeout(() => {loginform.submit()}, 1000);
+                    
                 }else{
-                    loginform.submit();
+                    mensaje_error.style.color = 'red';
+                    mensaje_error.innerHTML = 'Respuesta incorrecta';
+                    $('#cierra-modal').click();
                 }
             }
 
