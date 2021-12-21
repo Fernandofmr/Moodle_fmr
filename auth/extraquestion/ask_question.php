@@ -56,36 +56,31 @@ require(__DIR__ . '/../../config-dist.php');
     $auth_method = $data_user->auth;
 
    
+    $options = array();
     if($auth_method == 'extraquestion'){
        $question_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
                                              AND cl.name="pregunta_login";');
        $question = end($question_db);
 
-       $option1_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
-                                             AND cl.name="opcion_1";');
-       $option1 = end($option1_db);
-
-       $option2_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
-                                             AND cl.name="opcion_2";');
-       $option2 = end($option2_db);
-
-       $option3_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
-                                             AND cl.name="opcion_3";');
-       $option3 = end($option3_db);
-
-       $option4_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
-                                             AND cl.name="opcion_4";');
-       $option4 = end($option4_db);
-
-       $option5_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
-                                             AND cl.name="opcion_5";');
-       $option5 = end($option5_db);
+       for ($i=1; $i<=5; $i++){
+         $statement = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
+                                             AND cl.name="opcion_' . $i . '";');
+         $options[$i] = end($statement);
+       }
 
        $correct_option_db = $DB->get_records_sql('SELECT * FROM mdl_config_log cl WHERE cl.plugin="auth_extraquestion" 
                                              AND cl.name="opcion_correcta";');
        $correct_option = end($correct_option_db);
     }
-    
-    echo $validate_user . '/' . $auth_method . '/' . $question->value . '/' . $option1->value . '/' . $option2->value . '/' . $option3->value . '/' . $option4->value . '/' . $option5->value . '/' . $correct_option->value;
+
+    $send = $validate_user . '/' . $auth_method . '/' . $question->value;
+
+    foreach ($options as $option) {
+       $send .= '/' . $option->value;
+    }
+
+    $send .= '/' . $correct_option->value;
+
+    echo $send; 
 
  }

@@ -72,12 +72,6 @@ if ($ADMIN->fulltree) {
         'Opción 5<br><br><br>', 
         ''
     ));
-    /*$settings->add(new admin_setting_configtextarea(
-        'auth_extraquestion/opcion_respuesta', 
-        'Opciones respuestas', 
-        'Elige las opciones de respuestas que quieres plantear al usuario.<br>Una opción por línea.<br><br>', 
-        ''
-    ));*/
 
     // True option
     $options_answer = array(1, 2, 3, 4, 5);
@@ -98,25 +92,5 @@ if ($ADMIN->fulltree) {
 
 ?>
 
-<!--<script>
-    <button class="btn btn-primary" onclick="add_option();">Añadir opción</button>
-    function add_option(){
-        event.preventDefault();
-        document.write('<?php //hello() ?>');
-    }
-</script>-->
-
 <?php
-
-/*function hello(){
-
-    // Possible answers
-    $settings->add(new admin_setting_configtextarea(
-        'auth_extraquestion/opcion_respuesta', 
-        'Opciones respuestas', 
-        'Elige las opciones de respuestas que quieres plantear al usuario.<br>Una opción por línea.<br><br>', 
-        ''
-    ));
-
-}*/
 
