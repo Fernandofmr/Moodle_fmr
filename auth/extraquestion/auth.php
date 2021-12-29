@@ -55,6 +55,7 @@ class auth_plugin_extraquestion extends auth_plugin_base {
      */
     function loginpage_hook(){
         ?>
+        <div id="content-box-modal" style="display:none">
         <div id="error-message" class="text-center"></div>
         <button id="btn-hacer-pregunta" class="btn btn-primary d-none" onclick="hacer_pregunta()">Pregunta login</button>
         <!-- Button trigger modal -->
@@ -90,11 +91,13 @@ class auth_plugin_extraquestion extends auth_plugin_base {
             </div>
         </div>
         </div>
+        </div>
         
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script>
             $(window).on("load", function() {
+                document.getElementById('content-box-modal').style.display = 'block';
                 $('#error-message').insertBefore('#username');
                 $('#btn-hacer-pregunta').insertAfter('#loginbtn');
                 $('#btn-modal-question').insertAfter('#btn-hacer-pregunta');
