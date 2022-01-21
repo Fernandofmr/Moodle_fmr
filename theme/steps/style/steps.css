@@ -60,11 +60,11 @@ body{
 }
 
 .navbar{
-    background-color: #86C8FD !important;
+    background-color: #0f6cbf !important;
 }
 
 #nav-drawer{
-    background-color: #D4EEFF!important;
+    background-color: #A2CAFC !important;
 }
 
 .d-inline-block button.nav-link{
@@ -78,4 +78,24 @@ body{
 
 .img-menu-lateral{
     width: 15rem;
+}
+
+[data-action="toggle-drawer"] .icon {
+    color: black;
+}
+
+.d-md-inline {
+    color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.mr-1, .mx-1 {
+    color: white;
+}
+
+.nav.usernav .usermenu .dropdown-toggle {
+    color: white;
 }
